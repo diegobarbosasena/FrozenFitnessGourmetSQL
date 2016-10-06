@@ -2,6 +2,8 @@ create database dbfrozenfitness;
 
 use dbfrozenfitness;
 
+
+
 create table tblParceiro(
 codParceiro int auto_increment primary key,
 cnpjParceiro varchar(14),
