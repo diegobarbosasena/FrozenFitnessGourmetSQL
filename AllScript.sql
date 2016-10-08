@@ -1,4 +1,3 @@
-drop database if exists dbfrozenfitness;
 
 create database if not exists dbfrozenfitness;
 
@@ -64,7 +63,7 @@ nomeTransportadora varchar(60),
 cnpjTransportadora varchar(14),
 emailTransportadora varchar(100),
 telefoneTransportadora varchar(20),
-responsaelTransportadora varchar(60));
+responsavelTransportadora varchar(60));
 
 create table tblVeiculoTransp(
 codVeiculoTransp int auto_increment primary key,
