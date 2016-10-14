@@ -1,4 +1,4 @@
-drop database if exists dbsmartgourmet
+drop database if exists dbsmartgourmet;
 
 create database if not exists dbsmartgourmet;
 
