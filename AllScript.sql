@@ -1,7 +1,8 @@
+drop database if exists dbsmartgourmet
 
-create database if not exists dbfrozenfitness;
+create database if not exists dbsmartgourmet;
 
-use dbfrozenfitness;
+use dbsmartgourmet;
 
 create table tblParceiro(
 codParceiro int auto_increment primary key,
@@ -25,6 +26,7 @@ emailContato varchar(100),
 celularContato varchar(20),
 telefoneContato2 varchar(20),
 codEmpresa int);
+
 
 create table tblParceiroEnd(
 codParceiroEnd int auto_increment primary key,
@@ -63,7 +65,7 @@ nomeTransportadora varchar(60),
 cnpjTransportadora varchar(14),
 emailTransportadora varchar(100),
 telefoneTransportadora varchar(20),
-responsavelTransportadora varchar(60));
+responsaelTransportadora varchar(60));
 
 create table tblVeiculoTransp(
 codVeiculoTransp int auto_increment primary key,
@@ -95,17 +97,18 @@ codPrato int);
 
 create table tblPrato(
 codPrato int auto_increment primary key,
-nomeMateria varchar(100),
-precoPrato decimal,
+nomePrato varchar(100),
+precoPrato decimal(5,3),
 descricaoPrato text,
-caloria decimal,
-valorEnergetico decimal,
-carboidrato decimal,
-proteina decimal,
-sodio decimal,
-gorduras decimal,
+caloria decimal(5,3),
+valorEnergetico decimal(5,3),
+carboidrato decimal(5,3),
+proteina decimal(5,3),
+sodio decimal(5,3),
+gorduras decimal(5,3),
 dtFabricacao date,
 dtValidade date,
+imagemPrato varchar(100),
 visitas int);
 
 create table tblProdutoPrato(
@@ -116,14 +119,14 @@ codProduto int);
 create table tblProduto(
 codProduto int auto_increment primary key,
 nomeProduto varchar(60),
-precoProduto decimal,
+precoProduto decimal(5,3),
 descricaoProduto text,
 caloriaProduto decimal,
-valorEnergeticoProduto decimal,
-carboidratoProduto decimal,
-proteinaProduto decimal,
-sodioProduto decimal,
-gordurasProduto decimal,
+valorEnergeticoProduto decimal(5,3),
+carboidratoProduto decimal(5,3),
+proteinaProduto decimal(5,3),
+sodioProduto decimal(5,3),
+gordurasProduto decimal(5,3),
 dtFabricacaoProduto date,
 dtValidadeProduto date);
 
@@ -140,7 +143,7 @@ codMateria int);
 create table tblMateriaPrima(
 codMateria int auto_increment primary key,
 nomeMateria varchar(60),
-precoMateria decimal,
+precoMateria decimal(5,3),
 descricaoMateria text,
 porcaoMateria float);
 
@@ -151,7 +154,9 @@ codCategoriaMateria int);
 
 create table tblCategoriaMateria(
 codCategoriaMateria int auto_increment primary key,
-nomeCategoriaMateria varchar(60));
+nomeCategoriaMateria varchar(60),
+imagemCategoria varchar(100),
+descricaoCategoria text);
 
 create table tblPratoPromocao(
 codPratoPromocao int auto_increment primary key,
@@ -184,7 +189,7 @@ codPromocao int auto_increment primary key,
 nomePromocao varchar(60),
 dtInicial date,
 dtFinal date,
-valorDesconto decimal);
+valorDesconto decimal(5,3));
 
 create table tblSlider(
 codSlider int auto_increment primary key,
@@ -206,7 +211,9 @@ codCategoriaPrato int);
 
 create table tblCategoriaPrato(
 codCategoriaPrato int auto_increment primary key,
-nomeCategoriaProduto varchar(60));
+nomeCategoriaPrato varchar(60),
+imagemCategoriaPrato varchar(100),
+descricaoCategoriaPrato text);
 
 create table tblFuncionarioTransp(
 codFuncionarioTransp int auto_increment primary key,
@@ -246,8 +253,8 @@ codCliente int auto_increment primary key,
 nomeCliente varchar(60),
 cpfCliente varchar(14),
 dtNascCliente date,
-peso decimal, 
-altura decimal,
+peso decimal(5,3), 
+altura decimal(5,3),
 telefoneCliente varchar(60),
 celularCliente varchar(20),
 emailCliente varchar(100));
@@ -300,6 +307,7 @@ codPedido int,
 latitude varchar(100),
 longitude varchar(100));
 
+use dbsmartgourmet;
 
 alter table tblParceiro
 add foreign key(codEmpresa) references tblEmpresa(codEmpresa);
@@ -354,6 +362,7 @@ add foreign key(codCategoriaMateria) references tblCategoriaMateria(codCategoria
 
 alter table tblCatMateria
 add foreign key(codMateria) references tblMateriaPrima(codMateria);
+
 
 alter table tblPratoPromocao
 add foreign key(codPromocao) references tblPromocao(codPromocao);
@@ -438,6 +447,7 @@ add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
 
 alter table tblExercicioObjetivo
 add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
+
 
 alter table tblExercicioObjetivo
 add foreign key(codExercicio) references tblExercicio(codExercicio);
@@ -6037,4 +6047,5 @@ insert into tblCidade (nomeCidade, codEstado) values("Vicentinópolis", "9");
 insert into tblCidade (nomeCidade, codEstado) values("Vila Boa", "9");
 insert into tblCidade (nomeCidade, codEstado) values("Vila Propício", "9");
 insert into tblCidade (nomeCidade, codEstado) values("Brasília", "7");
+
 
