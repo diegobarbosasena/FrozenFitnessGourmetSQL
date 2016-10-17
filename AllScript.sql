@@ -54,18 +54,14 @@ tituloSobreLoja varchar(100),
 historiaSobreLoja text,
 codEmpresa int);
 
-create table tblTranspEnd(
-codTranspEnd int auto_increment primary key,
-codEndereco int,
-codTransportadora int);
-
 create table tblTransportadora(
 codTransportadora int auto_increment primary key,
 nomeTransportadora varchar(60),
 cnpjTransportadora varchar(14),
 emailTransportadora varchar(100),
 telefoneTransportadora varchar(20),
-responsavelTransportadora varchar(60));
+responsavelTransportadora varchar(60),
+codEndereco int);
 
 create table tblVeiculoTransp(
 codVeiculoTransp int auto_increment primary key,
@@ -144,8 +140,7 @@ create table tblMateriaPrima(
 codMateria int auto_increment primary key,
 nomeMateria varchar(60),
 precoMateria decimal(5,3),
-descricaoMateria text,
-porcaoMateria float);
+descricaoMateria text);
 
 create table tblCatMateria(
 codCatMateria int auto_increment primary key,
@@ -403,12 +398,6 @@ add foreign key(codEmpresa) references tblEmpresa(codEmpresa);
 alter table tblEmpresaEnd
 add foreign key(codEndereco) references tblEndereco(codEndereco);
 
-alter table tblTranspEnd
-add foreign key(codEndereco) references tblEndereco(codEndereco);
-
-alter table tblTranspEnd
-add foreign key(codTransportadora) references tblTransportadora(codTransportadora);
-
 alter table tblEndereco
 add foreign key(codCidade) references tblCidade(codCidade);
 
@@ -447,7 +436,6 @@ add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
 
 alter table tblExercicioObjetivo
 add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
-
 
 alter table tblExercicioObjetivo
 add foreign key(codExercicio) references tblExercicio(codExercicio);
