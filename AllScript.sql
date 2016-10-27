@@ -1,4 +1,6 @@
-create database dbsmartgourmet;
+DROP database if EXISTS dbsmartgourmet;
+
+create database if not EXISTS dbsmartgourmet;
 use dbsmartgourmet;
 
 create table tblParceiro(
@@ -318,7 +320,8 @@ alter table tblPedido
 add foreign key(codVeiculoTransp) references tblVeiculoTransp(codVeiculoTransp);
 
 alter table tblTransportadora
-add foreign key(codEndereco) references tblEndereco(codEndereco);
+add foreign key(codEndereco) references tblEndereco(codEndereco)
+on delete cascade;
 
 alter table tblDadosGps
 add foreign key(codPedido) references tblPedido(codPedido);
