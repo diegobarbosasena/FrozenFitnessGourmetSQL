@@ -64,7 +64,8 @@ codEndereco int);
 create table tblVeiculoTransp(
 codVeiculoTransp int auto_increment primary key,
 placaVeiculo varchar(8),
-codTipoVeiculo int);
+codTipoVeiculo int,
+codTransportadora int);
 
 create table tblTipoVeiculo(
 codTipoVeiculo int auto_increment primary key,
@@ -309,6 +310,9 @@ add foreign key(codEmpresa) references tblEmpresa(codEmpresa);
 
 alter table tblVeiculoTransp
 add foreign key(codTipoVeiculo) references tblTipoVeiculo(codTipoVeiculo);
+
+alter table tblVeiculoTransp
+add foreign key(codTransportadora) references tblTransportadora(codTransportadora);
 
 alter table tblPedido
 add foreign key(codCliente) references tblCliente(codCliente);
