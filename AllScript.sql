@@ -303,7 +303,6 @@ longitude varchar(100));
 
 use dbsmartgourmet;
 
-
 alter table tblContato
 add foreign key(codEmpresa) references tblEmpresa(codEmpresa);
 
@@ -320,8 +319,7 @@ alter table tblPedido
 add foreign key(codVeiculoTransp) references tblVeiculoTransp(codVeiculoTransp);
 
 alter table tblTransportadora
-add foreign key(codEndereco) references tblEndereco(codEndereco)
-on delete cascade;
+add foreign key(codEndereco) references tblEndereco(codEndereco);
 
 alter table tblDadosGps
 add foreign key(codPedido) references tblPedido(codPedido);
@@ -358,7 +356,6 @@ add foreign key(codCategoriaMateria) references tblCategoriaMateria(codCategoria
 
 alter table tblCatMateria
 add foreign key(codMateria) references tblMateriaPrima(codMateria);
-
 
 alter table tblPratoPromocao
 add foreign key(codPromocao) references tblPromocao(codPromocao);
@@ -399,7 +396,6 @@ add foreign key(codEmpresa) references tblEmpresa(codEmpresa);
 alter table tblEmpresaEnd
 add foreign key(codEndereco) references tblEndereco(codEndereco);
 
-
 alter table tblEndereco
 add foreign key(codCidade) references tblCidade(codCidade);
 
@@ -439,7 +435,5 @@ add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
 alter table tblExercicioObjetivo
 add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
 
-
 alter table tblExercicioObjetivo
 add foreign key(codExercicio) references tblExercicio(codExercicio);
-
