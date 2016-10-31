@@ -111,6 +111,7 @@ codProduto int);
 create table tblProduto(
 codProduto int auto_increment primary key,
 nomeProduto varchar(60),
+imagemProduto varchar(100),
 precoProduto decimal(5,3),
 descricaoProduto text,
 caloriaProduto decimal(5,3),
