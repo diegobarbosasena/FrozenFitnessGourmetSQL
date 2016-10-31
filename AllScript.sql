@@ -10,6 +10,7 @@ nomeParceiro varchar(60),
 imgParceiro varchar(100),
 siteParceiro varchar (100),
 telefoneParceiro varchar(20),
+codEndereco int,
 emailParceiro varchar(100));
 
 create table tblEmpresa(
@@ -24,12 +25,6 @@ emailContato varchar(100),
 celularContato varchar(20),
 telefoneContato2 varchar(20),
 codEmpresa int);
-
-
-create table tblParceiroEnd(
-codParceiroEnd int auto_increment primary key,
-codEndereco int,
-codParceiro int);
 
 create table tblEndereco(
 codEndereco int auto_increment primary key,
@@ -404,12 +399,6 @@ add foreign key(codEndereco) references tblEndereco(codEndereco);
 alter table tblEndereco
 add foreign key(codCidade) references tblCidade(codCidade);
 
-alter table tblParceiroEnd
-add foreign key(codEndereco) references tblEndereco(codEndereco);
-
-alter table tblParceiroEnd
-add foreign key(codParceiro) references tblParceiro(codParceiro);
-
 alter table tblUsuarioFuncionarioLoja
 add foreign key(codFuncionarioLoja) references tblFuncionarioLoja(codFuncionarioLoja);
 
@@ -442,3 +431,6 @@ add foreign key(codObjetivo) references tblObjetivo(codObjetivo);
 
 alter table tblExercicioObjetivo
 add foreign key(codExercicio) references tblExercicio(codExercicio);
+
+alter table tblParceiro
+add foreign key(codEndereco) references tblEndereco(codEndereco);
