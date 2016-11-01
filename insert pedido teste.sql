@@ -1,14 +1,23 @@
-INSERT INTO `tblPedido`
-( `tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
-VALUES 
-('ganho de massa' , now(), now(), null, null , null);
+﻿USE dbsmartgourmet;
 
 INSERT INTO `tblPedido`
-( `tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
+(`tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
 VALUES 
-('força e resistencia' , now(), now(),null, null , null);
+('pedido 1', now() , now() + INTERVAL 5 DAY , null, null, null);
+
 
 INSERT INTO `tblPedido`
-( `tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
+(`tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
 VALUES 
-('perda de peso' , now(), now(), null, null , null);
+('pedido 2', now() , now() + INTERVAL 5 DAY , null, null, null);
+
+
+INSERT INTO `tblPedido`
+(`tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
+VALUES 
+('pedido 3', now() , now() + INTERVAL 5 DAY , null, null, null);
+
+INSERT INTO `tblPedido`
+(`tipoPedido`, `dtEntrega`, `dtCompra`, `codCliente`, `codStatus`, `codVeiculoTransp`) 
+VALUES 
+('pedido 4', now() , now() + INTERVAL 5 DAY , null, null, null);
