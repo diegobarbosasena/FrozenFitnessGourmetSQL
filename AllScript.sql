@@ -7,7 +7,7 @@ create table tblParceiro(
 codParceiro int auto_increment primary key,
 cnpjParceiro varchar(14),
 nomeParceiro varchar(60),
-imagemParceiro varchar(100),
+imgParceiro varchar(100),
 siteParceiro varchar (100),
 telefoneParceiro varchar(20),
 codEndereco int,
