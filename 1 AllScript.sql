@@ -158,9 +158,8 @@ codMateria int,
 dtFabricacao date,
 dtValidade date,
 quantidade int,
-quantidadeMinima int
-foreign key(codMateria) references tblMateriaPrima(codMateria)
-);
+quantidadeMinima int,
+foreign key(codMateria) references tblMateriaPrima(codMateria));
 
 create table tblProdutoPromocao(
 codProdutoPromocao int auto_increment primary key,
