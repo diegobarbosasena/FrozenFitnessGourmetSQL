@@ -43,6 +43,9 @@ codEmpresa int);
 create table tblSobreLoja(
 codSobreLoja int auto_increment primary key,
 imgSobreLoja varchar(100),
+imgSobreLoja1 varchar(100),
+imgSobreLoja2 varchar(100),
+imgSobreLoja3 varchar(100),
 tituloSobreLoja varchar(100),
 historiaSobreLoja text,
 codEmpresa int);
@@ -149,22 +152,15 @@ codPratoPromocao int auto_increment primary key,
 codPromocao int,
 codPrato int);
 
-create table tblMateriaEstoque(
-codMateriaEstoque int auto_increment primary key,
-codMateria int,
-codEstoque int);
-
 create table tblEstoque(
 codEstoque int auto_increment primary key,
+codMateria int,
 dtFabricacao date,
 dtValidade date,
 quantidade int,
-quantidadeMinima int);
-
-create table tblProdutoEstoque(
-codProdutoEstoque int auto_increment primary key,
-codProduto int,
-codEstoque int);
+quantidadeMinima int
+foreign key(codMateria) references tblMateriaPrima(codMateria)
+);
 
 create table tblProdutoPromocao(
 codProdutoPromocao int auto_increment primary key,
@@ -362,18 +358,6 @@ add foreign key(codPromocao) references tblPromocao(codPromocao);
 
 alter table tblPratoPromocao
 add foreign key(codPrato) references tblPrato(codPrato);
-
-alter table tblMateriaEstoque
-add foreign key(codMateria) references tblMateriaPrima(codMateria);
-
-alter table tblMateriaEstoque
-add foreign key(codEstoque) references tblEstoque(codEstoque);
-
-alter table tblProdutoEstoque
-add foreign key(codProduto) references tblProduto(codProduto);
-
-alter table tblProdutoEstoque
-add foreign key(codEstoque) references tblEstoque(codEstoque);
 
 alter table tblProdutoPromocao
 add foreign key(codPromocao) references tblPromocao(codPromocao);
