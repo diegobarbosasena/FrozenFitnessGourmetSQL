@@ -24,17 +24,17 @@ SELECT
     t.codTransportadora, t.nomeTransportadora, t.cnpjTransportadora, t.emailTransportadora, t.telefoneTransportadora, t.responsavelTransportadora, t.codEndereco,
 	v.codTipoVeiculo, v.nomeTipoVeiculo
 FROM tblPedido AS p
-INNER JOIN tblCliente AS cl
+LEFT JOIN tblCliente AS cl
 ON (p.codCliente = cl.codCliente)
-INNER JOIN tblStatus AS s
+LEFT JOIN tblStatus AS s
 ON (p.codStatus = s.codStatus )
-INNER JOIN tblVeiculoTransp AS vt
+LEFT JOIN tblVeiculoTransp AS vt
 ON (p.codVeiculoTransp = vt.codVeiculoTransp)
-INNER JOIN tblTipoVeiculo AS tv
+LEFT JOIN tblTipoVeiculo AS tv
 ON (tv.codTipoVeiculo = vt.codTipoVeiculo)
-INNER JOIN tblTransportadora AS t
+LEFT JOIN tblTransportadora AS t
 ON (t.codTransportadora = vt.codTransportadora)
-INNER JOIN tblTipoVeiculo AS v
+LEFT JOIN tblTipoVeiculo AS v
 ON (v.codTipoVeiculo = vt.codTipoVeiculo);
 
 
@@ -53,17 +53,17 @@ BEGIN
 		t.codTransportadora, t.nomeTransportadora, t.cnpjTransportadora, t.emailTransportadora, t.telefoneTransportadora, t.responsavelTransportadora, t.codEndereco,
 		v.codTipoVeiculo, v.nomeTipoVeiculo
 	FROM tblPedido AS p
-	INNER JOIN tblCliente AS cl
+	LEFT JOIN tblCliente AS cl
 	ON (p.codCliente = cl.codCliente)
-	INNER JOIN tblStatus AS s
+	LEFT JOIN tblStatus AS s
 	ON (p.codStatus = s.codStatus )
-	INNER JOIN tblVeiculoTransp AS vt
+	LEFT JOIN tblVeiculoTransp AS vt
 	ON (p.codVeiculoTransp = vt.codVeiculoTransp)
-	INNER JOIN tblTipoVeiculo AS tv
+	LEFT JOIN tblTipoVeiculo AS tv
 	ON (tv.codTipoVeiculo = vt.codTipoVeiculo)
-	INNER JOIN tblTransportadora AS t
+	LEFT JOIN tblTransportadora AS t
 	ON (t.codTransportadora = vt.codTransportadora)
-	INNER JOIN tblTipoVeiculo AS v
+	LEFT JOIN tblTipoVeiculo AS v
 	ON (v.codTipoVeiculo = vt.codTipoVeiculo);
 
 END //
