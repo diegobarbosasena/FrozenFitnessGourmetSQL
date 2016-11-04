@@ -213,7 +213,8 @@ create table tblUsuario(
 codUsuario int auto_increment primary key,
 usuario varchar(20),
 senha varchar(20),
-imagemUsuario varchar(200));
+imagemUsuario varchar(200),
+codTipoUsuario int);
 
 create table tblTipoUsuario(
 codTipoUsuario int auto_increment primary key,
@@ -417,3 +418,6 @@ add foreign key(codExercicio) references tblExercicio(codExercicio);
 
 alter table tblParceiro
 add foreign key(codEndereco) references tblEndereco(codEndereco);
+
+alter table tblUsuario
+add foreign key(codTipoUsuario) references tblTipoUsuario(codTipoUsuario);
