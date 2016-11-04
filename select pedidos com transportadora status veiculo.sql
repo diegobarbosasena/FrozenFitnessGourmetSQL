@@ -16,13 +16,7 @@ select * from tblVeiculoTransp;
 
 
 SELECT 
-	p.codPedido, p.tipoPedido, p.dtEntrega, p.dtCompra, p.codCliente, p.codStatus, p.codVeiculoTransp,
-    vt.codVeiculoTransp, vt.placaVeiculo, vt.codTipoVeiculo, vt.codTransportadora,
-    cl.codCliente, cl.nomeCliente, cl.cpfCliente, cl.dtNascCliente, cl.peso, cl.altura, cl.telefoneCliente, cl.celularCliente, cl.emailCliente,
-    s.codStatus, s.statusPedido,
-    tv.codTipoVeiculo, tv.nomeTipoVeiculo,
-    t.codTransportadora, t.nomeTransportadora, t.cnpjTransportadora, t.emailTransportadora, t.telefoneTransportadora, t.responsavelTransportadora, t.codEndereco,
-	v.codTipoVeiculo, v.nomeTipoVeiculo
+	p.*, vt.*, cl.*, s.*, tv.*, t.*, v.*
 FROM tblPedido AS p
 LEFT JOIN tblCliente AS cl
 ON (p.codCliente = cl.codCliente)
@@ -35,7 +29,8 @@ ON (tv.codTipoVeiculo = vt.codTipoVeiculo)
 LEFT JOIN tblTransportadora AS t
 ON (t.codTransportadora = vt.codTransportadora)
 LEFT JOIN tblTipoVeiculo AS v
-ON (v.codTipoVeiculo = vt.codTipoVeiculo);
+ON (v.codTipoVeiculo = vt.codTipoVeiculo)
+ORDER BY s.statusPedido DESC;
 
 
 DROP PROCEDURE IF EXISTS pcd_lista_pedi_clie_sta_tipoveic_trans_veictrans;
@@ -45,13 +40,7 @@ CREATE PROCEDURE pcd_lista_pedi_clie_sta_tipoveic_trans_veictrans()
 BEGIN
 	
     SELECT 
-		p.codPedido, p.tipoPedido, p.dtEntrega, p.dtCompra, p.codCliente, p.codStatus, p.codVeiculoTransp,
-		vt.codVeiculoTransp, vt.placaVeiculo, vt.codTipoVeiculo, vt.codTransportadora,
-		cl.codCliente, cl.nomeCliente, cl.cpfCliente, cl.dtNascCliente, cl.peso, cl.altura, cl.telefoneCliente, cl.celularCliente, cl.emailCliente,
-		s.codStatus, s.statusPedido,
-		tv.codTipoVeiculo, tv.nomeTipoVeiculo,
-		t.codTransportadora, t.nomeTransportadora, t.cnpjTransportadora, t.emailTransportadora, t.telefoneTransportadora, t.responsavelTransportadora, t.codEndereco,
-		v.codTipoVeiculo, v.nomeTipoVeiculo
+		p.*, vt.*, cl.*, s.*, tv.*, t.*, v.*
 	FROM tblPedido AS p
 	LEFT JOIN tblCliente AS cl
 	ON (p.codCliente = cl.codCliente)
@@ -64,7 +53,8 @@ BEGIN
 	LEFT JOIN tblTransportadora AS t
 	ON (t.codTransportadora = vt.codTransportadora)
 	LEFT JOIN tblTipoVeiculo AS v
-	ON (v.codTipoVeiculo = vt.codTipoVeiculo);
+	ON (v.codTipoVeiculo = vt.codTipoVeiculo)
+	ORDER BY s.statusPedido DESC;
 
 END //
 delimiter ;
