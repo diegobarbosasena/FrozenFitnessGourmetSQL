@@ -422,4 +422,4 @@ add foreign key(codEndereco) references tblEndereco(codEndereco);
 alter table tblUsuario
 add foreign key(codTipoUsuario) references tblTipoUsuario(codTipoUsuario);
 
-alter table tblcliente add column sexo char;
+alter table tblCliente add column sexo char;

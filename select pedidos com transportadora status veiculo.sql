@@ -30,7 +30,7 @@ LEFT JOIN tblTransportadora AS t
 ON (t.codTransportadora = vt.codTransportadora)
 LEFT JOIN tblTipoVeiculo AS v
 ON (v.codTipoVeiculo = vt.codTipoVeiculo)
-ORDER BY s.statusPedido DESC;
+ORDER BY s.codStatus;
 
 
 DROP PROCEDURE IF EXISTS pcd_lista_pedi_clie_sta_tipoveic_trans_veictrans;
@@ -54,7 +54,7 @@ BEGIN
 	ON (t.codTransportadora = vt.codTransportadora)
 	LEFT JOIN tblTipoVeiculo AS v
 	ON (v.codTipoVeiculo = vt.codTipoVeiculo)
-	ORDER BY s.statusPedido DESC;
+	ORDER BY s.codStatus;
 
 END //
 delimiter ;
