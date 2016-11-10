@@ -423,3 +423,5 @@ alter table tblUsuario
 add foreign key(codTipoUsuario) references tblTipoUsuario(codTipoUsuario);
 
 alter table tblCliente add column sexo char;
+
+alter table tblParceiro add column imagemParceiro varchar(100);
