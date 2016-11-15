@@ -3,6 +3,12 @@ DROP database if EXISTS dbsmartgourmet;
 create database if not EXISTS dbsmartgourmet;
 use dbsmartgourmet;
 
+create table tblCarrinho(
+codCarrinho int auto_increment primary key,
+codCliente int,
+codPrato int
+);
+
 create table tblParceiro(
 codParceiro int auto_increment primary key,
 cnpjParceiro varchar(14),
@@ -421,6 +427,12 @@ add foreign key(codEndereco) references tblEndereco(codEndereco);
 
 alter table tblUsuario
 add foreign key(codTipoUsuario) references tblTipoUsuario(codTipoUsuario);
+
+alter table tblCarrinho 
+add foreign key (codCliente) references tblCliente (codCliente);
+
+alter table tblCarrinho
+add foreign key (codPrato) references tblPrato (codPrato);
 
 alter table tblCliente add column sexo char;
 
