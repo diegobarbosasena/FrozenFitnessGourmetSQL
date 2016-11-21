@@ -17,7 +17,8 @@ imgParceiro varchar(100),
 siteParceiro varchar (100),
 telefoneParceiro varchar(20),
 codEndereco int,
-emailParceiro varchar(100));
+emailParceiro varchar(100),
+imagemParceiro varchar(100));
 
 create table tblEmpresa(
 codEmpresa int auto_increment primary key,
@@ -80,6 +81,7 @@ codPedido int auto_increment primary key,
 tipoPedido varchar(60),
 dtEntrega date,
 dtCompra date,
+total decimal(9,2), 
 codCliente int,
 codStatus int,
 codVeiculoTransp int);
@@ -246,16 +248,33 @@ codCliente int auto_increment primary key,
 nomeCliente varchar(60),
 cpfCliente varchar(14),
 dtNascCliente date,
-peso decimal(5,3), 
+peso decimal(5,2), 
 altura decimal(5,3),
 telefoneCliente varchar(60),
 celularCliente varchar(20),
-emailCliente varchar(100));
+emailCliente varchar(100),
+sexo char(1));
 
 create table tblClienteEnd(
 codClienteEnd int auto_increment primary key,
 codEndereco int,
 codCliente int);
+
+create table tblClienteJuridico(
+codClienteJuridico int auto_increment primary key,
+nomeContato varchar(60),
+razaoSocial varchar(60),
+inscricaoEstadual varchar(60), 
+telefonePrincipal varchar(60), 
+telefoneContato varchar(60),
+emailPrincipal varchar(60),
+emailContato varchar(60)
+);
+
+create table tblClienteJuridicoEnd(
+codClienteJuridicoEnd int auto_increment primary key,
+codEndereco int,
+codClienteJuridico int);
 
 create table tblCidade(
 codCidade int auto_increment primary key,
@@ -410,6 +429,12 @@ add foreign key(codEndereco) references tblEndereco(codEndereco);
 alter table tblClienteEnd
 add foreign key(codCliente) references tblCliente(codCliente);
 
+alter table tblClienteJuridicoEnd
+add foreign key(codClienteJuridico) references tblClienteJuridico(codClienteJuridico);
+
+alter table tblClienteJuridicoEnd
+add foreign key(codEndereco) references tblEndereco(codEndereco);
+
 alter table tblObjetivoCliente
 add foreign key(codCliente) references tblCliente(codCliente);
 
@@ -434,6 +459,4 @@ add foreign key (codCliente) references tblCliente (codCliente);
 alter table tblCarrinho
 add foreign key (codPrato) references tblPrato (codPrato);
 
-alter table tblCliente add column sexo char;
 
-alter table tblParceiro add column imagemParceiro varchar(100);
