@@ -59,10 +59,13 @@ codEmpresa int);
 
 create table tblTransportadora(
 codTransportadora int auto_increment primary key,
-nomeTransportadora varchar(60),
-cnpjTransportadora varchar(19),
-emailTransportadora varchar(100),
-telefoneTransportadora varchar(20),
+razaoSocial varchar(100),
+nomeFantasia varchar(100),
+cnpjTransportadora varchar(20),
+telefonePrincipal varchar(20),
+telefoneContato varchar(20),
+emailPrincipal varchar(100),
+emailContato varchar(100),
 responsavelTransportadora varchar(60),
 codEndereco int);
 

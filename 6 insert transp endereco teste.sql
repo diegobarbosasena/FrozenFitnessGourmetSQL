@@ -1,62 +1,67 @@
 USE dbsmartgourmet;
 
-/*transportadora 1*/
 INSERT INTO `tblEndereco`
 	(`logradouro`, `cep`, `numero`, `bairro`, `complemento`, `codCidade`) 
 VALUES 
-	('Rua Transp 1', '111111', '1111' , 'Pq Transp 1', null, 3331);
+	('Rua Transp 1', '11111-111', '1111' , 'Pq Transp 1', null, 3331);
 
-INSERT INTO `tblTransportadora`
-	(`nomeTransportadora`, `cnpjTransportadora`, `emailTransportadora`, `telefoneTransportadora`, `responsavelTransportadora`, `codEndereco`) 
+INSERT INTO 
+	`tblTransportadora`
+(`razaoSocial`, `nomeFantasia`, `cnpjTransportadora`, `telefonePrincipal`, `telefoneContato`, `emailPrincipal`, `emailContato`, `responsavelTransportadora`, `codEndereco`) 
 VALUES 
-	('Transportadora 1', '111111', 'transp1@transp1.com', '111111', 'Resp transp 1', last_insert_id());
+('Transp 1','Transp um','11.111.111/1111-11','(11)1111-1111','(22)2222-2222', 'transp1@transp.com','transp_um@transp.com','Mohammed Med', last_insert_id());
 
-/*transportadora 2*/
+
 INSERT INTO `tblEndereco`
 	(`logradouro`, `cep`, `numero`, `bairro`, `complemento`, `codCidade`) 
 VALUES 
-	('Rua Transp 2', '222222', '2222' , 'Jd Transp 2', null, 3656);
+	('Rua Transp 2', '22222-222', '2222' , 'Jd Transp 2', null, 3656);
 
-INSERT INTO `tblTransportadora`
-	(`nomeTransportadora`, `cnpjTransportadora`, `emailTransportadora`, `telefoneTransportadora`, `responsavelTransportadora`, `codEndereco`) 
+INSERT INTO 
+	`tblTransportadora`
+(`razaoSocial`, `nomeFantasia`, `cnpjTransportadora`, `telefonePrincipal`, `telefoneContato`, `emailPrincipal`, `emailContato`, `responsavelTransportadora`, `codEndereco`) 
 VALUES 
-	('Transportadora 2', '222222', 'transp2@transp2.com', '222222', 'Resp transp 2', last_insert_id());
+('Transp 2','Transp 2','22.222.222/2222-22','(33)3333-3333','(44)4444-4444', 'transp2@transp.com','transp_dois@transp.com','Evie Amelia', last_insert_id());
 
-/*transportadora 3*/
+
 INSERT INTO `tblEndereco`
 	(`logradouro`, `cep`, `numero`, `bairro`, `complemento`, `codCidade`) 
 VALUES 
-	('Rua Transp 3', '333333', '3333' , 'Jd Transp 3', null, 3552);
+	('Rua Transp 3', '33333-333', '3333' , 'Jd Transp 3', null, 3552);
 
-INSERT INTO `tblTransportadora`
-	(`nomeTransportadora`, `cnpjTransportadora`, `emailTransportadora`, `telefoneTransportadora`, `responsavelTransportadora`, `codEndereco`) 
+INSERT INTO 
+	`tblTransportadora`
+(`razaoSocial`, `nomeFantasia`, `cnpjTransportadora`, `telefonePrincipal`, `telefoneContato`, `emailPrincipal`, `emailContato`, `responsavelTransportadora`, `codEndereco`) 
 VALUES 
-	('Transportadora 3', '333333', 'transp3@transp3.com', '333333', 'Resp transp 3', last_insert_id());
+('Transp 3','Transp 3','33.333.333/3333-33','(55)5555-5555','(66)6666-6666', 'transp3transp.com','transp_tres@transp.com','Thomas Joshua', last_insert_id());
 
 
-/*transportadora 4*/
 INSERT INTO `tblEndereco`
 	(`logradouro`, `cep`, `numero`, `bairro`, `complemento`, `codCidade`) 
 VALUES 
-	('Rua Transp 4', '444444', '4444' , 'Pq Transp 4', null, 3526);
+	('Rua Transp 4', '44444-444', '4444' , 'Pq Transp 4', null, 3526);
 
-INSERT INTO `tblTransportadora`
-	(`nomeTransportadora`, `cnpjTransportadora`, `emailTransportadora`, `telefoneTransportadora`, `responsavelTransportadora`, `codEndereco`) 
+INSERT INTO 
+	`tblTransportadora`
+(`razaoSocial`, `nomeFantasia`, `cnpjTransportadora`, `telefonePrincipal`, `telefoneContato`, `emailPrincipal`, `emailContato`, `responsavelTransportadora`, `codEndereco`) 
 VALUES 
-	('Transportadora 4', '444444', 'transp4@transp4.com', '444444', 'Resp transp 4', last_insert_id());
+('Transp 4','Transp 4','44.444.444/4444-44','(77)7777-7777','(88)8888-8888', 'transp4transp.com','transp_quatro@transp.com','Ruby Sophie', last_insert_id());
 
 
-SELECT 
-	t.codTransportadora, t.nomeTransportadora, t.cnpjTransportadora, t.emailTransportadora, t.telefoneTransportadora, t.responsavelTransportadora, 
-	e.codEndereco, e.logradouro, e.cep, e.numero, e.bairro, e.complemento 
-FROM 
-	tblTransportadora AS t 
-INNER JOIN 
-	tblEndereco AS e 
-ON 
-	(t.codEndereco = e.codEndereco) 
-ORDER BY 
-	codTransportadora DESC;
-	
+
+INSERT INTO `tblEndereco`
+	(`logradouro`, `cep`, `numero`, `bairro`, `complemento`, `codCidade`) 
+VALUES 
+	('Rua Transp 0', '00000-000', '0000' , 'Pq Transp 0', null, 3526);
+
+INSERT INTO 
+	`tblTransportadora`
+(`razaoSocial`, `nomeFantasia`, `cnpjTransportadora`, `telefonePrincipal`, `telefoneContato`, `emailPrincipal`, `emailContato`, `responsavelTransportadora`, `codEndereco`) 
+VALUES 
+('Transp teste','Transp teste','00.000.000/0000-00','(00)0000-0000','(00)0000-0000', 'transp_teste@transp.com','transp_teste@transp.com','Teste Teste', last_insert_id());
 
 
+SELECT t.*, e.*
+FROM tblTransportadora t
+LEFT JOIN tblEndereco e
+ON(t.codEndereco = e.codEndereco);
