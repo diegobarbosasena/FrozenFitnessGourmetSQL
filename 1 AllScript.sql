@@ -6,7 +6,8 @@ use dbsmartgourmet;
 create table tblCarrinho(
 codCarrinho int auto_increment primary key,
 codCliente int,
-codPrato int
+codPrato int,
+quantidade int
 );
 
 create table tblParceiro(
