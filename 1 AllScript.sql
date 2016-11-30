@@ -103,14 +103,14 @@ codPrato int);
 create table tblPrato(
 codPrato int auto_increment primary key,
 nomePrato varchar(100),
-precoPrato decimal(5,3),
+precoPrato decimal(9,2),
 descricaoPrato text,
-caloria decimal(5,3),
-valorEnergetico decimal(5,3),
-carboidrato decimal(5,3),
-proteina decimal(5,3),
-sodio decimal(5,3),
-gorduras decimal(5,3),
+caloria decimal(9,2),
+valorEnergetico decimal(9,2),
+carboidrato decimal(9,2),
+proteina decimal(9,2),
+sodio decimal(9,2),
+gorduras decimal(9,2),
 imagemPrato varchar(100),
 visitas int);
 
@@ -123,14 +123,14 @@ create table tblProduto(
 codProduto int auto_increment primary key,
 nomeProduto varchar(60),
 imagemProduto varchar(100),
-precoProduto decimal(5,3),
+precoProduto decimal(9,2),
 descricaoProduto text,
-caloriaProduto decimal(5,3),
-valorEnergeticoProduto decimal(5,3),
-carboidratoProduto decimal(5,3),
-proteinaProduto decimal(5,3),
-sodioProduto decimal(5,3),
-gordurasProduto decimal(5,3));
+caloriaProduto decimal(9,2),
+valorEnergeticoProduto decimal(9,2),
+carboidratoProduto decimal(9,2),
+proteinaProduto decimal(9,2),
+sodioProduto decimal(9,2),
+gordurasProduto decimal(9,2));
 
 create table tblCatProduto(
 codCatProduto int auto_increment primary key,
@@ -145,7 +145,7 @@ codMateria int);
 create table tblMateriaPrima(
 codMateria int auto_increment primary key,
 nomeMateria varchar(60),
-precoMateria decimal(5,3),
+precoMateria decimal(9,2),
 descricaoMateria text);
 
 create table tblCatMateria(
@@ -183,7 +183,7 @@ codPromocao int auto_increment primary key,
 nomePromocao varchar(60),
 dtInicial date,
 dtFinal date,
-valorDesconto decimal(5,3));
+valorDesconto decimal(9,2));
 
 create table tblSlider(
 codSlider int auto_increment primary key,
@@ -252,8 +252,8 @@ codCliente int auto_increment primary key,
 nomeCliente varchar(60),
 cpfCliente varchar(14),
 dtNascCliente date,
-peso decimal(5,2), 
-altura decimal(5,3),
+peso decimal(9,2), 
+altura decimal(9,2),
 telefoneCliente varchar(60),
 celularCliente varchar(20),
 emailCliente varchar(100),
