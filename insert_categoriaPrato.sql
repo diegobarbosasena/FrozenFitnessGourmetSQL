@@ -1,3 +1,5 @@
+use dbsmartgourmet;
+
 insert into tblCategoriaPrato (nomeCategoriaPrato, descricaoCategoriaPrato, imagemCategoriaPrato) 
 values("Carnes","Versátil, a carne está sempre presente na mesa da maioria dos brasileiros. E o melhor: ela pode se adequar a diferentes pratos.","conteudo/imagem/carne.jpg");
 

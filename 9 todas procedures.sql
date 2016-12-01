@@ -115,12 +115,3 @@ BEGIN
 END //
 delimiter ;
 
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,4 @@
-
+use dbsmartgourmet;
 
 insert into tblCategoriaMateria (nomeCategoriaMateria) values("Frios");
 insert into tblCategoriaMateria (nomeCategoriaMateria) values("Farinha");
