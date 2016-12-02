@@ -7,7 +7,8 @@ create table tblCarrinho(
 codCarrinho int auto_increment primary key,
 codCliente int,
 codPrato int,
-quantidade int
+quantidade int,
+codProduto int
 );
 
 create table tblParceiro(
@@ -462,5 +463,8 @@ add foreign key (codCliente) references tblCliente (codCliente);
 
 alter table tblCarrinho
 add foreign key (codPrato) references tblPrato (codPrato);
+
+alter table tblCarrinho
+add foreign key (codProduto) references tblProduto (codProduto);
 
 
