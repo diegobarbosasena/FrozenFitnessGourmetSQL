@@ -99,7 +99,8 @@ create table tblItemPedido(
 codItemPedido int auto_increment primary key,
 quantidade int,
 codPedido int,
-codPrato int);
+codPrato int,
+codProduto);
 
 create table tblPrato(
 codPrato int auto_increment primary key,
@@ -361,6 +362,11 @@ add foreign key(codPedido) references tblPedido(codPedido);
 
 alter table tblItemPedido
 add foreign key(codPrato) references tblPrato(codPrato);
+
+
+alter table tblItemPedido
+add foreign key(codProduto) references tblProduto(codProduto);
+
 
 alter table tblProdutoPrato
 add foreign key(codProduto) references tblProduto(codProduto);
