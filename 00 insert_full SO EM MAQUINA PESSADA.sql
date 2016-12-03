@@ -7,7 +7,8 @@ create table tblCarrinho(
 codCarrinho int auto_increment primary key,
 codCliente int,
 codPrato int,
-quantidade int
+quantidade int,
+codProduto int
 );
 
 create table tblParceiro(
@@ -98,7 +99,8 @@ create table tblItemPedido(
 codItemPedido int auto_increment primary key,
 quantidade int,
 codPedido int,
-codPrato int);
+codPrato int,
+codProduto int);
 
 create table tblPrato(
 codPrato int auto_increment primary key,
@@ -361,6 +363,11 @@ add foreign key(codPedido) references tblPedido(codPedido);
 alter table tblItemPedido
 add foreign key(codPrato) references tblPrato(codPrato);
 
+
+alter table tblItemPedido
+add foreign key(codProduto) references tblProduto(codProduto);
+
+
 alter table tblProdutoPrato
 add foreign key(codProduto) references tblProduto(codProduto);
 
@@ -462,6 +469,10 @@ add foreign key (codCliente) references tblCliente (codCliente);
 
 alter table tblCarrinho
 add foreign key (codPrato) references tblPrato (codPrato);
+
+alter table tblCarrinho
+add foreign key (codProduto) references tblProduto (codProduto);
+
 
 INSERT INTO tblEstado (nomeEstado, uf) VALUES ('Acre' , 'AC');
 INSERT INTO tblEstado (nomeEstado, uf) VALUES ('Alagoas' , 'AL');

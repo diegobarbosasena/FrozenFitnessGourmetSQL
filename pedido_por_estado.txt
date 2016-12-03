@@ -1,0 +1,34 @@
+
+estado
+	codEstado
+	nomeEstado
+********************
+cidade
+	codCidade
+	nomeCidade
+	codEstado
+********************
+
+********************
+endereco
+	codEndereco
+	logradouro
+	codCidade
+********************
+
+********************
+cliente_end
+	codClienteEnd
+	codEndereco
+	codCliente
+********************
+
+********************
+
+cliente
+********************
+********************
+
+pedido
+
+
