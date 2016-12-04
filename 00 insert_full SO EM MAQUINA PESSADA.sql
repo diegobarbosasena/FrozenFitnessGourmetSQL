@@ -270,6 +270,7 @@ create table tblClienteJuridico(
 codClienteJuridico int auto_increment primary key,
 nomeContato varchar(60),
 razaoSocial varchar(60),
+cnpj varchar (20),
 inscricaoEstadual varchar(60), 
 telefonePrincipal varchar(60), 
 telefoneContato varchar(60),
