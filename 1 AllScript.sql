@@ -100,7 +100,7 @@ codItemPedido int auto_increment primary key,
 quantidade int,
 codPedido int,
 codPrato int,
-codProduto);
+codProduto int);
 
 create table tblPrato(
 codPrato int auto_increment primary key,
